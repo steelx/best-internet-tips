@@ -9,7 +9,7 @@ group: "navigation"
 
 {% for news in site.posts %}
 <div class="post">
-  <a href="{{news.url}}">{{news.title}}</a>
+  <a href="{{site.baseurl}}{{news.url}}">{{news.title}}</a>
   <time>{{ news.date | date_to_string }}</time>
   <p>{{news.meta}}</p>
 </div>

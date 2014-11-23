@@ -16,7 +16,7 @@ group: "navigation"
             </header>
             <p>{{post.meta | truncatewords: 80}}</p>
             <ul class="actions">
-              <li><a href="{{post.url}}" class="button">Read More</a></li>
+              <li><a href="{{site.baseurl}}{{post.url}}" class="button">Read More</a></li>
             </ul>
           {% endif %}
         {% endif %}
@@ -28,7 +28,7 @@ group: "navigation"
 
       {% for news in paginator.posts %}
       <section>
-        <h4><a href="{{news.url}}">{{news.title}}</a></h4>
+        <h4><a href="{{site.baseurl}}{{news.url}}">{{news.title}}</a></h4>
         <time>{{ news.date | date_to_string }}</time>
         <p>{{news.meta | truncatewords: 50}}</p>
         <hr />
