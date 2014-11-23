@@ -14,6 +14,7 @@ This post shows how to step-by-step Add Google-plus Comments Box to Jekyll blog 
 
 If you are using Jekyll;
 
+
 1. Create `comments.html` file inside your `_includes` folder with below code
 
 ```
