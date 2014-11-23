@@ -2,7 +2,6 @@
 layout: single
 title: Add Google-plus Comments Box to Jekyll website
 meta: This post shows how to step-by-step Add Google-plus Comments Box to Jekyll blog or to any static website.
-category: web
 featured: true
 comments: true
 ---
