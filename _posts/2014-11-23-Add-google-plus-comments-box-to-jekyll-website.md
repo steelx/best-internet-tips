@@ -39,7 +39,7 @@ baseurl: http://steelx.github.io/best-internet-tips/
 3) include `comments.html` wherever you wana display Google plus comments, preferably inside posts layout file.
 
 <pre><code>
-  {% include comments.html %}
+  include comments.html
 </code></pre>
 
 I hope this post was useful, please dont forget to Google PLUSONE this post or comment below.
