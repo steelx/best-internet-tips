@@ -1,0 +1,8 @@
+body {
+  background-color: whitesmoke;
+}
+
+.active {
+  font-weight: 700;
+  color: red;
+}

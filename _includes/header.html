@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}">
+  
+  {% if page.meta %}
+  <title>{{page.title}} :: Computer tips</title>
+  <meta name="description" content='{{page.meta}}'>
+  <meta property="og:title" content="{{page.title}}" />
+  <meta property="og:image" content="{{site.baseurl}}/images/bg.jpg" />
+  {% else %}
+  <title>Best online computer tips</title>
+  <meta name="description" content="Get the best computer tips and trick, hack your internet world, information and expert advice you need to get the job done.">
+  <meta property="og:title" content="Best Computer Tips" />
+  <meta property="og:image" content="{{site.baseurl}}/images/bg.jpg" />
+  {% endif %}
+
+  
+  <!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="{{site.baseurl}}/css/skel.css" />
+  <link rel="stylesheet" href="{{site.baseurl}}/css/style.css" />
+  <link rel="stylesheet" href="{{site.baseurl}}/css/style-xlarge.css" />
+  <link rel="stylesheet" href="{{site.baseurl}}/css/syntax.css">
+  <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+</head>
+<body id="top">
+
+<aside class="sharing">
+  <div class="g-plusone" data-annotation="inline" data-width="300"></div>
+</aside>
+
+<header id="header">
+  <a href="{{site.baseurl}}/index.html" class="image avatar"><img src="/images/avatar.jpg" alt="Herve Falciani" /></a>
+  <h1><strong>I am Steel</strong>, a Web Developer by profession<br />
+  who love to share computer knowledge,<br />
+  numerous hacking tips<br />
+  relating to life and internet.</h1>
+</header>

@@ -1,0 +1,54 @@
+---
+layout: default
+title: Homepage
+categories: homepage
+group: "navigation"
+---
+
+  <!-- One -->
+    <section id="one">
+      {% for post in site.posts %}
+        {% if post.featured == true %}
+          {% capture count %}{{ count | plus: '1' }}{% endcapture %}
+          {% if count == '1' %}
+            <header class="major">
+              <h2>{{ post.title }}</h2>
+            </header>
+            <p>{{post.meta | truncatewords: 80}}</p>
+            <ul class="actions">
+              <li><a href="{{post.url}}" class="button">Read More</a></li>
+            </ul>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </section>
+
+    <section id="four">
+      <h2>Recent News</h2>
+
+      {% for news in paginator.posts %}
+      <section>
+        <h4><a href="{{news.url}}">{{news.title}}</a></h4>
+        <time>{{ news.date | date_to_string }}</time>
+        <p>{{news.meta | truncatewords: 50}}</p>
+        <hr />
+      </section>
+      {% endfor %}
+
+      <!-- Pagination links -->
+      <div class="pagination">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+        {% else %}
+          <span class="previous">Previous</span>
+        {% endif %}
+        <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+        {% else %}
+          <span class="next ">Next</span>
+        {% endif %}
+      </div>
+    </section>
+
+
