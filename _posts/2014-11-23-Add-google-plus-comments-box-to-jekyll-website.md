@@ -19,6 +19,7 @@ If you are using Jekyll;
 
 `
   <script src="https://apis.google.com/js/plusone.js"></script>
+  
   <div class="g-comments"
       data-href="{{site.baseurl}}{{page.url}}"
       data-width="642"
@@ -36,6 +37,7 @@ baseurl: http://steelx.github.io/best-internet-tips/
 
 
 3. include `comments.html` wherever you wana display Google plus comments, preferably inside posts layout file.
+
 `
   {% include comments.html %}
 `
