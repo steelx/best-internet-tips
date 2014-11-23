@@ -2,6 +2,8 @@ markdown: redcarpet
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile','README.md']
 baseurl: http://steelx.github.io/best-internet-tips
 
+highlighter: true
+
 name: best-internet-tips
 description: best online computers tips
 

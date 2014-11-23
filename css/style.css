@@ -1039,6 +1039,41 @@
 .CommentHeader{margin-bottom:5px}
 .CommentContent { text-align:justify;color:#000000; }
 
+/*
+	emailme
+*/
+#emailme {
+	width: 400px;
+	height: 320px;
+	background-color: #76C1D7;
+	position: fixed;
+	top: 0; right: 0; left: 0; bottom: 0;
+	margin: auto;
+	padding: 20px;
+	border-radius: 5px;
+}
+#emailme .closeme {
+	font-size: 2em;
+	color: #383A3C;
+	font-weight: 700;
+	display: block;
+	position: absolute; top: 25px; right: 25px;
+	text-decoration: none;
+}
+#emailme h5 {
+	font-family: FontAwesome;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #ffffff;
+}
+#emailme p {
+	font-family: FontAwesome;
+	font-size: 12px;
+	color: #ffffff;
+}
+#emailme input {
+	margin-bottom: 5px;
+}
 
 /* Main */
 

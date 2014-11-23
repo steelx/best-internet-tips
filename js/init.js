@@ -8,7 +8,7 @@
 	var settings = {
 		
 		// Parallax background effect?
-			parallax: true,
+			parallax: false,
 
 		// Parallax factor (lower = more intense, higher = less intense).
 			parallaxFactor: 20
@@ -19,12 +19,12 @@
 		reset: 'full',
 		containers: '100%',
 		breakpoints: {
-			global: { href: 'css/style.css', grid: { gutters: ['2.5em', 0] } },
-			xlarge: { media: '(max-width: 1800px)', href: 'css/style-xlarge.css' },
-			large: { media: '(max-width: 1280px)', href: 'css/style-large.css', grid: { gutters: ['2em', 0] } },
-			medium: { media: '(max-width: 980px)', href: 'css/style-medium.css'},
-			small: { media: '(max-width: 736px)', href: 'css/style-small.css', grid: { gutters: ['1.5em', 0], zoom: 2 }, viewport: { scalable: false } },
-			xsmall: { media: '(max-width: 480px)', href: 'css/style-xsmall.css', grid: { zoom: 3 } }
+			global: { href: '/css/style.css', grid: { gutters: ['2.5em', 0] } },
+			xlarge: { media: '(max-width: 1800px)', href: '/css/style-xlarge.css' },
+			large: { media: '(max-width: 1280px)', href: '/css/style-large.css', grid: { gutters: ['2em', 0] } },
+			medium: { media: '(max-width: 980px)', href: '/css/style-medium.css'},
+			small: { media: '(max-width: 736px)', href: '/css/style-small.css', grid: { gutters: ['1.5em', 0], zoom: 2 }, viewport: { scalable: false } },
+			xsmall: { media: '(max-width: 480px)', href: '/css/style-xsmall.css', grid: { zoom: 3 } }
 		}
 	});
 
@@ -74,9 +74,10 @@
 			// Parallax background.
 
 				// Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
-					if (skel.vars.browser == 'ie'
-					||	skel.vars.isMobile)
+				if (skel.vars.browser == 'ie'
+					||	skel.vars.isMobile){
 						settings.parallax = false;
+				}
 
 				if (settings.parallax) {
 
@@ -119,6 +120,59 @@
 					windowMargin: (skel.isActive('small') ? 0 : 50)
 				});
 
-	});
+
+				//set Cookie
+				var createCookie = function(name, value, days) {
+				    var expires;
+				    if (days) {
+				        var date = new Date();
+				        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+				        expires = "; expires=" + date.toGMTString();
+				    }
+				    else {
+				        expires = "";
+				    }
+				    document.cookie = name + "=" + value + expires + "; path=/";
+				};
+
+				function getCookie(c_name) {
+				    if (document.cookie.length > 0) {
+				        c_start = document.cookie.indexOf(c_name + "=");
+				        if (c_start != -1) {
+				            c_start = c_start + c_name.length + 1;
+				            c_end = document.cookie.indexOf(";", c_start);
+				            if (c_end == -1) {
+				                c_end = document.cookie.length;
+				            }
+				            return unescape(document.cookie.substring(c_start, c_end));
+				        }
+				    }
+				    return "";
+				};
+
+				if (getCookie('subscribed') == 'subscribed') {
+					$('#emailme').remove();
+				} else {
+					$('#emailme').hide();
+					$('#emailme .closeme').on('click', function (e) {
+						e.preventDefault();
+						$('#emailme').fadeOut(300);
+					});
+					//show emailme form
+					setTimeout(function () {
+						$('#emailme').fadeIn(300);
+					}, 3000);
+
+					//show again after 3mins
+					setInterval(function () {
+						$('#emailme').fadeIn(300);
+					}, 180000);
+					//on submit setCookie
+					$('#emailme_form').submit(function(){
+						createCookie('subscribed', 'subscribed', 20)
+					});
+				}
+
+			});
 
 })(jQuery);
