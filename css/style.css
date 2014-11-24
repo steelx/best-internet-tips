@@ -1062,8 +1062,7 @@
 	position: absolute; top: 25px; right: 25px;
 	text-decoration: none;
 }
-#emailme h5 {
-	font-family: FontAwesome;
+#emailme h3 {
 	font-size: 18px;
 	text-transform: uppercase;
 	color: #ffffff;
