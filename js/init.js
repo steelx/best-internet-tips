@@ -161,7 +161,7 @@
 					//show emailme form
 					setTimeout(function () {
 						$('#emailme').fadeIn(300);
-					}, 3000);
+					}, 5000);
 
 					//show again after 3mins
 					setInterval(function () {
