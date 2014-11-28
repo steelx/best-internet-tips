@@ -8,3 +8,6 @@ name: best-internet-tips
 description: best online computers tips
 
 paginate: 5
+
+gems:
+ - jekyll-sitemap
