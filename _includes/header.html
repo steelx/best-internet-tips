@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}">
-  
+  <input type="hidden" value="{{ site.url }}"> 
   {% if page.meta %}
   <title>{{page.title}} :: Computer tips</title>
   <meta name="description" content='{{page.meta}}'>
